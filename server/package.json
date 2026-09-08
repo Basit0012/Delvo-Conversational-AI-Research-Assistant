@@ -1,0 +1,26 @@
+{
+  "name": "delvo-server",
+  "version": "1.0.0",
+  "description": "Delvo conversational AI research assistant server",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@langchain/core": "^0.3.40",
+    "@langchain/mistralai": "^0.2.0",
+    "@tavily/core": "^0.0.2",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "langchain": "^0.3.37",
+    "mongoose": "^8.10.1",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.3"
+  }
+}

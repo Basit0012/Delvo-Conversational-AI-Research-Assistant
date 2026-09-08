@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delvo</title>
+    <meta name="description" content="Delvo is an intelligent AI research assistant that autonomously searches the live web and synthesizes insights." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet" />
+    <script>
+      (function() {
+        try {
+          var params = new URLSearchParams(window.location.search);
+          var urlTheme = params.get('theme');
+          var saved = (urlTheme === 'light' || urlTheme === 'dark') ? urlTheme : localStorage.getItem('delvo_theme');
+          var theme = saved || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          if (urlTheme === 'light' || urlTheme === 'dark') {
+            localStorage.setItem('delvo_theme', urlTheme);
+          }
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
