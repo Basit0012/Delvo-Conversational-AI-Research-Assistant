@@ -9,6 +9,7 @@ import { Server } from 'socket.io';
 import { connectDB } from './config/db.js';
 import authRoutes from './routes/auth.js';
 import chatRoutes from './routes/chats.js';
+import fileRoutes from './routes/files.js';
 import setupSocketIO from './socket/index.js';
 
 const app = express();
@@ -45,6 +46,7 @@ app.get('/api/health', (req, res) => {
 // API Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/chats', chatRoutes);
+app.use('/api/chats', fileRoutes);
 
 // 404 Handler for unmatched routes
 app.use((req, res) => {
