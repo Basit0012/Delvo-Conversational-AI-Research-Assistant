@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AlertCircle, Eye, EyeOff } from 'lucide-react';
 import { useAuth } from '../context/useAuth';
+import DelvoLogo from '../components/DelvoLogo';
 import ThemeToggle from '../components/ThemeToggle';
 
 // Authentic Vercel Brand SVG Icons
@@ -305,11 +306,9 @@ export const Register = () => {
 
       {/* Top minimal navigation bar */}
       <header className="vercel-topbar">
-        <Link to="/" className="vercel-logo-link" aria-label="Vercel Home">
-          <svg width="20" height="18" viewBox="0 0 76 65" fill="currentColor" aria-hidden="true">
-            <path d="M37.5274 0L75.0548 65H0L37.5274 0Z" />
-          </svg>
-          <span className="vercel-logo-text">Vercel</span>
+        <Link to="/" className="vercel-logo-link" aria-label="Delvo Home">
+          <DelvoLogo size={28} />
+          <span className="vercel-logo-text">Delvo</span>
         </Link>
         <div className="vercel-topbar-actions">
           <Link to="/login" className="vercel-btn-subtle auth-link">
@@ -319,11 +318,11 @@ export const Register = () => {
         </div>
       </header>
 
-      {/* Centered Vercel elevated sign-up card */}
+      {/* Centered Delvo sign-up card */}
       <main className="vercel-auth-main">
         <div className="vercel-signup-card">
           <h1 className="vercel-signup-headline auth-title">
-            Your first deploy<br />is just a sign-up away.
+            Your research assistant<br />is just a sign-up away.
           </h1>
 
           {errorMessage && (
@@ -730,23 +729,11 @@ export const Register = () => {
           )}
         </div>
 
-        {/* Customer Proof Quote rotating between eBay and Adobe */}
+        {/* Delvo tagline */}
         <div className="vercel-customer-proof">
-          {tickerIndex === 0 ? (
-            <>
-              <EbayIcon />
-              <span>
-                has <strong>6x faster</strong> release cycles
-              </span>
-            </>
-          ) : (
-            <>
-              <AdobeIcon />
-              <span>
-                has <strong>6x faster</strong> preview builds &amp; deployments
-              </span>
-            </>
-          )}
+          <span className="text-xs text-gray-500">
+            Powered by <strong>Delvo AI</strong> with live web research &amp; document grounding
+          </span>
         </div>
       </main>
 

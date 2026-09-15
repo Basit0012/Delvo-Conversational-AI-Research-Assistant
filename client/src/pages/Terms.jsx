@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import DelvoLogo from '../components/DelvoLogo';
 import ThemeToggle from '../components/ThemeToggle';
 import { ArrowLeft, ArrowUp, ExternalLink, ShieldCheck, Scale, FileText } from 'lucide-react';
 
@@ -80,9 +81,7 @@ export const Terms = () => {
         <div className="vercel-terms-nav-inner">
           <div className="vercel-terms-nav-left">
             <Link to="/" className="vercel-logo-link" aria-label="Delvo Home">
-              <svg width="20" height="18" viewBox="0 0 76 65" fill="currentColor" aria-hidden="true">
-                <path d="M37.5274 0L75.0548 65H0L37.5274 0Z" />
-              </svg>
+              <DelvoLogo size={24} />
               <span className="vercel-logo-text">Delvo</span>
             </Link>
             <div className="vercel-terms-nav-badge">

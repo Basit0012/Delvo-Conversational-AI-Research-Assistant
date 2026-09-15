@@ -30,17 +30,23 @@ export const request = async (endpoint, options = {}) => {
   const token = getToken();
 
   const headers = {
-    'Content-Type': 'application/json',
     ...(options.headers || {}),
   };
 
-  if (token) {
-    headers['Authorization'] = `Bearer ${token}`;
+  let body = options.body;
+  if (body instanceof FormData) {
+    delete headers['Content-Type'];
+  } else {
+    if (!headers['Content-Type']) {
+      headers['Content-Type'] = 'application/json';
+    }
+    if (body && typeof body === 'object') {
+      body = JSON.stringify(body);
+    }
   }
 
-  let body = options.body;
-  if (body && typeof body === 'object' && !(body instanceof FormData)) {
-    body = JSON.stringify(body);
+  if (token) {
+    headers['Authorization'] = `Bearer ${token}`;
   }
 
   try {
