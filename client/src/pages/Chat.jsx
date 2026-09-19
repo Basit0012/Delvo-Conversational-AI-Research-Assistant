@@ -78,7 +78,7 @@ export const Chat = () => {
   const activeChat = chats.find((c) => c._id === activeChatId);
 
   return (
-    <div className="app-layout">
+    <div className="app-layout chat-dark">
       {/* 1. Sidebar */}
       <Sidebar
         chats={chats}

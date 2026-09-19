@@ -75,6 +75,7 @@ export const ChatInputTextArea = React.forwardRef(
         placeholder={placeholder}
         disabled={disabled}
         rows={rows}
+        style={{ fontFamily: "'Geist Variable', 'Geist', sans-serif" }}
         className={cn(
           'w-full resize-none border-0 bg-transparent px-2.5 py-1.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-hidden focus:ring-0 disabled:cursor-not-allowed disabled:opacity-50',
           className
